@@ -1,0 +1,19 @@
+{
+  "name": "plantcareapp",
+  "version": "1.0.0",
+  "description": "This is the Plant Care App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StrickQuinn/PlantCareApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StrickQuinn/PlantCareApp/issues"
+  },
+  "homepage": "https://github.com/StrickQuinn/PlantCareApp#readme"
+}
