@@ -21,13 +21,9 @@ def after_request(response):
     g.db.close()
     return response
 
-CORS(plant, origins=['http://localhost:3000/'], supports_credentials=True)
+CORS(plant, origins=['http://localhost:3000'], supports_credentials=True)
 
 app.register_blueprint(plant, url_prefix='/api/v1/plants')
-
-@app.route('/')
-def index():
-    return 'hello'
 
 if __name__ == '__main__':
     models.initialize
