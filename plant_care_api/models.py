@@ -4,8 +4,10 @@ import datetime
 DATABASE = PostgresqlDatabase('plants')
 
 class Plant(Model):
-    name = CharField()
-    created_at = DateTimeField(default=datetime.datetime.now)
+    id = IntegerField(unique=True)
+    com_name = CharField(max_length=50)
+    sci_name = CharField(max_length=100)
+    date = IntegerField()
     location = CharField()
     moisture = CharField()
     temperature = CharField()
@@ -13,6 +15,9 @@ class Plant(Model):
     pest = CharField()
     notes = CharField()
     image = CharField()
+
+    class Meta:
+        database = DATABASE
 
 def initialize():
     DATABASE.connect()
