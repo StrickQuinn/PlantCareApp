@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import NavBar from './NavBar.jsx'
 
 export default class Header extends Component {
     render() {
         return (
-            <div className="header">
+            <header>
                 <h1>Plant Care Log</h1>
-            </div>
+                <NavBar />
+            </header>
         )
     }
 }

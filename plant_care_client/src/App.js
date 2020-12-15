@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PlantLog from './components/PlantLog.jsx'
 import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
@@ -34,6 +36,7 @@ export default class App extends Component {
       <main>
         <Header />
         <PlantLog plants={ this.state.plants }/>
+        <Footer />
       </main>
     )
   }
