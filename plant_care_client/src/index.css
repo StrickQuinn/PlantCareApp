@@ -31,6 +31,7 @@ header {
   height: 80px;
   color: #4b4a4a;
   padding: 2% 0 3% 0;
+  margin: 0 0 2% 0;
 }
 
 /* NavBar.jsx */
@@ -49,4 +50,17 @@ footer {
 /* PlantLog.jsx */
 table {
   padding: 2%;
+}
+
+/* NewForm.jsx */
+.newform {
+  font-size: 85%;
+}
+
+.label {
+  text-align: right;
+}
+
+input {
+  font-size: 100%;
 }
