@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PlantLog from './components/PlantLog.jsx'
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
@@ -29,15 +30,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        { this.state.plants.map(plant => {
-          return (
-            <ul>
-              <li key={plant.id}>{plant.com_name}</li>
-            </ul>
-          )
-        })}
-      </div>
+      <PlantLog plants={ this.state.plants }/>
     )
   }
 }
