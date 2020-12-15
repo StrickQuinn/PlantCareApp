@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PlantLog from './components/PlantLog.jsx'
+import Header from './components/Header.jsx'
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
@@ -30,7 +31,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <PlantLog plants={ this.state.plants }/>
+      <main>
+        <Header />
+        <PlantLog plants={ this.state.plants }/>
+      </main>
     )
   }
 }

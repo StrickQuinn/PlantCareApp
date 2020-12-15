@@ -4,13 +4,15 @@ export default class PlantLog extends Component {
     render() {
         return (
             <div>
-                <ul>
-                { this.props.plants.map(plant => {
-                    return (
-                        <li key={plant.id}>{plant.com_name}</li>
-                    )
-                })}
-                </ul>
+            { this.props.plants.map(plant => {
+                return (
+                    <ul>
+                    <li key={plant.id}>{plant.date}</li>
+                    <li key={plant.id}>{plant.com_name}</li>
+                    <li key={plant.id}>{plant.sci_name}</li>
+                    </ul>
+                )
+            })}
             </div>
         )
     }
