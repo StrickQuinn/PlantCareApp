@@ -1,10 +1,43 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+
+const baseURL = 'http://localhost:8000/api/v1/plants/'
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      plants: []
+    }
+    this.getPlants = this.getPlants.bind(this)
+  }
+
+  componentDidMount() {
+    this.getPlants()
+  }
+
+  getPlants() {
+    fetch(baseURL)
+    .then((data) => {
+      console.log(data)
+      return data.json()
+    }).then((res) => {
+      this.setState({
+        plants: res.data
+      })
+    })
+  }
+
   render() {
     return (
       <div>
-        <h1>Hello</h1>
+        { this.state.plants.map(plant => {
+          return (
+            <ul>
+              <li key={plant.id}>{plant.com_name}</li>
+            </ul>
+          )
+        })}
       </div>
     )
   }
