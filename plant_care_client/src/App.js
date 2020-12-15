@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const baseURL = 'http://localhost:8000/api/v1/plants/'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      plants: []
+    }
+    this.getPlants = this.getPlants.bind(this)
+  }
+
+  componentDidMount() {
+    this.getPlants()
+  }
+
+  getPlants() {
+    fetch(baseURL)
+    .then((data) => {
+      console.log(data)
+      return data.json()
+    }).then((res) => {
+      this.setState({
+        plants: res.data
+      })
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        { this.state.plants.map(plant => {
+          return (
+            <ul>
+              <li key={plant.id}>{plant.com_name}</li>
+            </ul>
+          )
+        })}
+      </div>
+    )
+  }
 }
 
-export default App;
