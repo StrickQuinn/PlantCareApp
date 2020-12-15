@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 

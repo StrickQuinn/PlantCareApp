@@ -6,7 +6,7 @@
 .pnp.js
 plant_care_api/__pycache__/*
 plant_care_api/resources/__pycache__/*
-plant_care_api/.eslintcache
+plant_care_client/.eslintcache
 
 # testing
 /coverage
