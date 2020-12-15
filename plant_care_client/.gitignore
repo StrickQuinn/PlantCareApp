@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+plant_care_api/__pycache__/*
+plant_care_api/resources/__pycache__/*
+.eslintcache
 
 # testing
 /coverage

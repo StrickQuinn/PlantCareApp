@@ -1,13 +1,52 @@
+/* browser */
+* {
+  margin: 0 auto;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #EDF8F4;
+  font-family: Helvetica Neue;
+  color: #707070;
+  font-size: 30px;
+  text-align: center;
+}
+ul {
+  padding: 0;
+  margin: 2%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 1%;
+  margin: 1% 0 0 0;
+}
+
+/* Header.jsx */
+h1 {
+  padding: 0 0 1% 0;
+}
+
+header {
+  background: #a3c2ac;
+  height: 80px;
+  color: #4b4a4a;
+  padding: 2% 0 3% 0;
+}
+
+/* NavBar.jsx */
+.nav {
+  background: #a3c2ac;
+  margin: 0 auto;
+}
+
+/* Footer.jsx */
+footer {
+  background: #a3c2ac;
+  color: #4b4a4a;
+  height: 30px;
+}
+
+/* PlantLog.jsx */
+table {
+  padding: 2%;
 }
