@@ -1,13 +1,30 @@
+/* browser */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  background: #EDF8F4;
+  font-family: Helvetica Neue;
+  color: #707070;
+  font-size: 30px;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header.jsx */
+.header {
+  background: #a3c2ac;
+  height: 80px;
+  color: #4b4a4a;
+  padding: 2% 0 3% 0;
+}
+
+h1 {
+  margin: 0 auto;
+}
+
+/* PlantLog.jsx */
+ul {
+  padding: 0 2%;
+}
+
+li {
+  list-style: none;
 }
