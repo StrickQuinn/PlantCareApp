@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import PlantLog from './components/PlantLog.jsx'
+import Header from './components/Header.jsx'
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
@@ -30,15 +31,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        { this.state.plants.map(plant => {
-          return (
-            <ul>
-              <li key={plant.id}>{plant.com_name}</li>
-            </ul>
-          )
-        })}
-      </div>
+      <main>
+        <Header />
+        <PlantLog plants={ this.state.plants }/>
+      </main>
     )
   }
 }
