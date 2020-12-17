@@ -97,7 +97,7 @@ export default class NewLog extends Component {
                         </tr>
                         <tr>
                             <th className="label"><label htmlFor="temperature">Temperature:</label></th>
-                            <td><input type="text" name="temperature" id={ this.state.temperature } value="temperature" placeholder="ex. 65°F" onChange={ this.handleChange } /></td>
+                            <td><input type="text" name="temperature" id="temperature" value={ this.state.temperature } placeholder="ex. 65°F" onChange={ this.handleChange } /></td>
                         </tr>
                         <tr>
                             <th className="label"><label htmlFor="soil">Soil:</label></th>
