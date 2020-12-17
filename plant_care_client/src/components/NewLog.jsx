@@ -72,7 +72,7 @@ export default class NewLog extends Component {
     render() {
         return (
             <form className="newform" onSubmit={ this.handleSubmit }>
-                <h2>Plant Log</h2>
+                <h2>New Log Entry</h2>
                     <label htmlFor="date"> Date(YYYYMMDD):</label>
                         <input type="text" name="date" id="date" value={ this.state.date } placeholder="YYYYMMDD" onChange={ this.handleChange }/>
                     <br />
