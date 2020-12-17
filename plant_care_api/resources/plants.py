@@ -4,6 +4,7 @@ from playhouse.shortcuts import model_to_dict
 
 plant = Blueprint('plants', 'plant')
 
+# get route
 @plant.route('/', methods=["GET"])
 def get_all_plants():
     try:
@@ -19,6 +20,7 @@ def get_all_plants():
             "message": "Error getting resources"
         })
 
+# show full plant log
 @plant.route('/', methods=["POST"])
 def create_plant_entry():
     payload = request.get_json()
@@ -32,4 +34,14 @@ def create_plant_entry():
     return jsonify(data=plant_dict, status={
         "code": 201,
         "message": "Success with post route"
+    })
+
+#show a single plant log
+@plant.route('/<id>', methods=["GET"])
+def show_a_plant_log(id):
+    plant = models.Plant.get_by_id(id)
+    print(plant.__dict__)
+    return jsonify(data=model_to_dict(plant), status={
+        "code": 200,
+        "message": "Success with showing a single log"
     })
