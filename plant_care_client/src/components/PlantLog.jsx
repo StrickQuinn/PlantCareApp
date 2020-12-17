@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
+import SingleLog from './SingleLog.jsx'
+import SingleLogView from './SingleLogView.jsx'
 
 export default class PlantLog extends Component {
     render() {
         return (
-            <table className="plantlog">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Common Name</th>
-                        <th>Scientific Name</th>
-                    </tr>
-                </thead>
-                { this.props.plants.map(plant => {
+            <div className="plantlog">
+                <h2>Plant Log</h2>
+                <ul>
+                    <li>Date</li>
+                    <li>Common Name</li>
+                    <li>Scientific Name</li>
+                </ul>
+                { this.props.plants.map((plant) => {
                     return (
-                        <tbody>
-                            <tr key={ plant.id }>
-                                <td>{ plant.date }</td>
-                                <td>{ plant.com_name }</td>
-                                <td>{ plant.sci_name }</td>
-                            </tr>
-                        </tbody>
+                        <SingleLog plant={ plant } key={plant.id} showSingleView={ this.props.showSingleView }/>
                     )
                 })}
-            </table>
+                { this.props.plants.map((plant) => {
+                    return (
+                        <SingleLogView plant ={ plant } key={ plant.id } showSingleView={ this.props.showSingleView }/>
+                    )
+                })}
+            </div>
         )
     }
 }
