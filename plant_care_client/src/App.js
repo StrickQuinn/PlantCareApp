@@ -3,6 +3,7 @@ import PlantLog from './components/PlantLog.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NewLog from './components/NewLog.jsx'
+import SingleLog from './components/SingleLog.jsx'
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -33,12 +34,14 @@ export default class App extends Component {
     })
   }
 
+
   render() {
     return (
       <main>
         <Header />
         <NewLog />
         <PlantLog plants={ this.state.plants }/>
+        <SingleLog plants={ this.state.plants }/>
         <Footer />
       </main>
     )
