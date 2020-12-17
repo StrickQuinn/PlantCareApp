@@ -12,9 +12,11 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      plants: []
+      plants: [],
     }
     this.getPlants = this.getPlants.bind(this)
+    this.componentDidMount = this.componentDidMount.bind(this)
+    this.showSingleView = this.showSingleView.bind(this)
   }
 
   componentDidMount() {
@@ -27,19 +29,34 @@ export default class App extends Component {
       console.log(data)
       return data.json()
     }).then((res) => {
+
       this.setState({
         plants: res.data
       })
     })
   }
 
+  showSingleView(id) {
+    fetch(baseURL + id, {
+      method: "GET",
+    })
+    .then((res) => {
+      const copyPlants = [...this.state.plants];
+      const findIndex = this.state.plants.findIndex(
+        (plant) => (plant.id) === id
+      );
+      this.setState({
+        plant: copyPlants[findIndex]
+      })
+    })
+  }
 
   render() {
     return (
       <main>
         <Header />
         <NewLog />
-        <PlantLog plants={ this.state.plants }/>
+        <PlantLog plants={ this.state.plants } showSingleView={this.showSingleView}/>
         <Footer />
       </main>
     )
