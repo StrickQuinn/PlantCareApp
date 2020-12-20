@@ -3,6 +3,7 @@ import PlantLog from './components/PlantLog.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NewLog from './components/NewLog.jsx'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
