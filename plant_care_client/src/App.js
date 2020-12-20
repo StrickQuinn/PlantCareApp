@@ -6,8 +6,6 @@ import NewLog from './components/NewLog.jsx'
 import MainPage from './components/MainPage.jsx'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
 export default class App extends Component {
@@ -58,7 +56,6 @@ export default class App extends Component {
       <Router>
         <div>
           <Header />
-          
           <Switch>
             <Route path="/" exact component={ MainPage }/>
             <Route path="/log" component={() =>(
@@ -67,15 +64,11 @@ export default class App extends Component {
                 showSingleView={ this.showSingleView }
               />
             )} />
+            <Route path="/entry" component={ NewLog } />
           </Switch>
           <Footer />
         </div>
       </Router>
-
-      // <MainPage />
-      // <NewLog />
-      // <PlantLog plants={ this.state.plants } showSingleView={this.showSingleView}/>
-      
     )
   }
 }
