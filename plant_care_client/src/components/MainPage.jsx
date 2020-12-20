@@ -5,6 +5,7 @@ export default class MainPage extends Component {
         return (
             <div>
                 <h2>Hello</h2>
+                <img src="https://i.imgur.com/fImUuxO.jpg" alt="" width="300" />
             </div>
         )
     }

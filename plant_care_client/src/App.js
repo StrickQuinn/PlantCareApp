@@ -58,15 +58,21 @@ export default class App extends Component {
       <Router>
         <div>
           <Header />
-          <MainPage />
-          {/* <Switch>
-            
-          </Switch> */}
+          
+          <Switch>
+            <Route path="/" exact component={ MainPage }/>
+            <Route path="/log" component={() =>(
+              <PlantLog 
+                plants={ this.state.plants }
+                showSingleView={ this.showSingleView }
+              />
+            )} />
+          </Switch>
           <Footer />
         </div>
       </Router>
 
-      
+      // <MainPage />
       // <NewLog />
       // <PlantLog plants={ this.state.plants } showSingleView={this.showSingleView}/>
       
