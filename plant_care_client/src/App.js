@@ -4,7 +4,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NewLog from './components/NewLog.jsx'
 import MainPage from './components/MainPage.jsx'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
@@ -64,7 +64,7 @@ export default class App extends Component {
                 showSingleView={ this.showSingleView }
               />
             )} />
-            <Route path="/entry" component={ NewLog } />
+            <Route path="/add" component={ NewLog } />
           </Switch>
           <Footer />
         </div>

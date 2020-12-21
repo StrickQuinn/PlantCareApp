@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-
-// const baseURL = 'http://localhost:3000/'
+const baseURL = 'http://localhost:3000/'
 
 export default class SingleLog extends Component {
     render() {
