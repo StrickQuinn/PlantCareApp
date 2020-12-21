@@ -45,3 +45,10 @@ def show_a_plant_log(id):
         "code": 200,
         "message": "Success with showing a single log"
     })
+
+# delete a plant
+@plant.route('/<id>', methods=["DELETE"])
+def delete_plant_log(id):
+    query = models.Plant.delete().where(models.Plant.id == id)
+    query.execute()
+    return jsonify(data="resource successfully deleted", status={ "code": 200, "message": "Delete a plant log: Success!"})
