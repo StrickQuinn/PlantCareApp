@@ -4,6 +4,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NewLog from './components/NewLog.jsx'
 import MainPage from './components/MainPage.jsx'
+import SingleLogView from './components/SingleLogView.jsx'
 import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
@@ -21,6 +22,7 @@ export default class App extends Component {
 
   componentDidMount() {
     this.getPlants()
+    this.showSingleView()
   }
 
   getPlants() {
@@ -48,7 +50,6 @@ export default class App extends Component {
       this.setState({
         plant: copyPlants[findIndex]
       })
-      console.log(id)
     })
   }
 
