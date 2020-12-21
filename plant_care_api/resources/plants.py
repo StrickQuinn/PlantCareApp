@@ -46,7 +46,15 @@ def show_a_plant_log(id):
         "message": "Success with showing a single log"
     })
 
-# delete a plant
+#update a plant log
+@plant.route('/<id>', methods=["PUT"])
+def update_plant_log(id):
+    payload = request.get_json()
+    query = models.Plant.update(**payload).where(models.Plant.id==id)
+    query.execute()
+    return jsonify(data=model_to_dict(models.Plant.get_by_id(id)), status={"code": 200, "message": "Success with update"})
+
+# delete a plant log
 @plant.route('/<id>', methods=["DELETE"])
 def delete_plant_log(id):
     query = models.Plant.delete().where(models.Plant.id == id)
