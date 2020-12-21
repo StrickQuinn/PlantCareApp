@@ -13,7 +13,7 @@ export default class SingleLogView extends Component {
                         <br />
                         <i>{ this.props.plant.sci_name }</i>
                         <br />
-                        <img src={ this.props.plant.image } height="300" ></img>
+                        <img src={ this.props.plant.image } height="300" alt=""></img>
                         <br />
                     </li>
                     <br />
