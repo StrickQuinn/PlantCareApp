@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SingleLog from './SingleLog.jsx'
 import SingleLogView from './SingleLogView.jsx'
-import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 
 export default class PlantLog extends Component {
