@@ -15,7 +15,7 @@ export default class PlantLog extends Component {
                 { this.props.plants.map((plant) => {
                     return (
                         <SingleLog plant={ plant } key={plant.id} showSingleView={ this.props.showSingleView }/>
-                    )
+                        )
                 })}
                 { this.props.plants.map((plant) => {
                     return (

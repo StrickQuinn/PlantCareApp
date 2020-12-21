@@ -48,6 +48,7 @@ export default class App extends Component {
       this.setState({
         plant: copyPlants[findIndex]
       })
+      console.log(id)
     })
   }
 
@@ -58,7 +59,7 @@ export default class App extends Component {
           <Header />
           <Switch>
             <Route path="/" exact component={ MainPage }/>
-            <Route path="/log" component={() =>(
+            <Route path="/log/" component={() =>(
               <PlantLog 
                 plants={ this.state.plants }
                 showSingleView={ this.showSingleView }
