@@ -1,6 +1,9 @@
 # PlantCareApp
-[Heroku]() |
-[GitHub]() |
+[Heroku -- API](
+https://git.heroku.com/strickquinn-plant-api.git) |
+[Heroku -- Client](
+https://git.heroku.com/strickquinn-plant-client.gi)
+[GitHub](https://github.com/StrickQuinn/PlantCareApp) |
 [Portfolio](https://squinnstrickland.netlify.app/)
 
 #### Purpose
