@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SingleLog from './SingleLog.jsx'
 import SingleLogView from './SingleLogView.jsx'
 import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
@@ -7,22 +6,12 @@ import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "rea
 export default class PlantLog extends Component {
     render() {
         return (
-            <div className="plantlog">
-                <h2>Plant Log</h2>
-                <ul>
-                    <li>Date</li>
-                    <li>Common Name</li>
-                    <li>Scientific Name</li>
-                </ul>
+            <div>
+                <h2>Single View</h2>
                 { this.props.plants.map((plant) => {
                     return (
                         <Router>
                             <div>
-                                <ul key={plant.id} >
-                                    <li><Link to={"/view/" + `${plant.id}` }>{ plant.date }</Link></li>
-                                    <li>{ plant.com_name }</li>
-                                    <li>{ plant.sci_name }</li>
-                                </ul>
                                 <Switch>
                                     <Route path={"/view/" + `${plant.id}`} exact component={() => (
                                         <SingleLogView plant ={ plant } key={ plant.id } showSingleView={ this.showSingleView }/> 
@@ -30,9 +19,8 @@ export default class PlantLog extends Component {
                                 </Switch>
                             </div>
                         </Router>
-            )
-                }) }
-                
+                    )
+                })}
             </div>
         )
     }
