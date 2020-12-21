@@ -18,11 +18,15 @@ export default class App extends Component {
     this.getPlants = this.getPlants.bind(this)
     this.componentDidMount = this.componentDidMount.bind(this)
     this.showSingleView = this.showSingleView.bind(this)
+    this.addPlantLog = this.addPlantLog.bind(this)
   }
 
   componentDidMount() {
     this.getPlants()
-    this.showSingleView()
+  }
+
+  addPlantLog() {
+
   }
 
   getPlants() {
@@ -60,12 +64,14 @@ export default class App extends Component {
           <Header />
           <Switch>
             <Route path="/" exact component={ MainPage }/>
-            <Route path="/log/" component={() =>(
-              <PlantLog 
-                plants={ this.state.plants }
-                showSingleView={ this.showSingleView }
-              />
+            <Route path="/log" component={() =>(
+              <PlantLog plants={ this.state.plants } />
             )} />
+            <Route path="/view" component={() => (
+              <SingleLogView 
+              plants={ this.state.plants }
+              showSingleView={ this.showSingleView }/>
+            ) } />
             <Route path="/add" component={ NewLog } />
           </Switch>
           <Footer />
