@@ -3,8 +3,9 @@ import PlantLog from './components/PlantLog.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import NewLog from './components/NewLog.jsx'
-
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import MainPage from './components/MainPage.jsx'
+import SingleLogView from './components/SingleLogView.jsx'
+import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 const baseURL = 'http://localhost:8000/api/v1/plants/'
 
@@ -21,6 +22,7 @@ export default class App extends Component {
 
   componentDidMount() {
     this.getPlants()
+    this.showSingleView()
   }
 
   getPlants() {
@@ -53,12 +55,22 @@ export default class App extends Component {
 
   render() {
     return (
-      <main>
-        <Header />
-        <NewLog />
-        <PlantLog plants={ this.state.plants } showSingleView={this.showSingleView}/>
-        <Footer />
-      </main>
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={ MainPage }/>
+            <Route path="/log/" component={() =>(
+              <PlantLog 
+                plants={ this.state.plants }
+                showSingleView={ this.showSingleView }
+              />
+            )} />
+            <Route path="/add" component={ NewLog } />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
     )
   }
 }
