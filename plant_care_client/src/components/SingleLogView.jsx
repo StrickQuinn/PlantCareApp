@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class SingleLogView extends Component {
     render() {
@@ -29,6 +30,8 @@ export default class SingleLogView extends Component {
                     <br />
                     <li> Details, Extra, Notes: { this.props.plant.notes } </li>
                     <br />
+                    <button>Edit</button>
+                    <button>Delete</button>
                 </ul>
             </div>
         )
