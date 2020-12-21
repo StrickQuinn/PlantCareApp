@@ -20,7 +20,7 @@ export default class NewLog extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.addPlantLog = this.addPlantLog.bind(this)
+        this.editPlantLog = this.editPlantLog.bind(this)
     }
 
     handleChange(e) {
@@ -29,10 +29,8 @@ export default class NewLog extends Component {
         });
     }
 
-    addPlantLog(plant) {
-        this.setState({
-            plants: this.state.plants.concat(plant)
-        })
+    editPlantLog(plant) {
+        this.setState()
     }
 
     handleSubmit(e) {
@@ -58,7 +56,7 @@ export default class NewLog extends Component {
         })
         .then((res) => res.json())
         .then((data) => {
-            this.props.addPlantLog(data);
+            this.props.editPlantLog(data);
             this.setState({
                 id: "",
                 com_name: "",
